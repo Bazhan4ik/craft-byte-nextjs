@@ -1,0 +1,168 @@
+#contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  font-family: var(--font_title);
+  background: linear-gradient(360deg, rgba(255,167,0,1) 0%, rgba(246,208,0,1) 100%);
+  background-clip: text;
+  font-size: 40px;
+  color: transparent;
+}
+
+.contact {
+  max-width: 600px;
+  width: 600px;
+}
+.contactTop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.contactInput {
+
+}
+.contactInput p {
+  margin: 4px 0;
+  font-size: 18px;
+}
+.contactInput input {
+  width: 100%;
+  height: 34px;
+  border: none;
+  border: 1px solid rgb(56, 56, 56);  
+  background: none;
+  color: white;
+  font-family: var(--font_default);
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 0 6px;
+}
+.contactInput input:focus {
+  outline: none;
+  border: 1px solid rgb(24, 24, 24);
+  border-radius: 0;
+  border-bottom: 2px solid rgb(104, 104, 104);
+}
+.contactInput .invalid:not(:focus) {
+  border: 1px solid red;
+}
+
+.contactInput_msg {
+  margin-top: 48px;
+}
+.contactInput_msg textarea {
+  resize: vertical;
+  width: 100%;
+  font-size: 18px;
+  font-family: var(--font_default);
+  background: none;
+  border: none;
+  border: 1px solid rgb(56, 56, 56);
+  color: white;
+  min-height: 100px;
+  margin-top: 12px;
+  padding: 6px;
+  border-radius: 4px;
+}
+.contactInput_msg textarea:focus {
+  outline: none;
+  border: none;
+  border: 1px solid rgb(24, 24, 24);
+  border-radius: 0;
+  border-bottom: 2px solid rgb(104, 104, 104);
+}
+.contactInput_msgText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+p.contactInput_msgDescription {
+  font-size: 14px;
+  color: rgb(94, 94, 94);
+}
+
+
+.contactBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contactBottom p {
+  max-width: 300px;
+  font-size: 14px;
+  color: rgb(94, 94, 94);
+}
+.contactBottom button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+
+  font-size: 18px;
+  font-family: var(--font_default);
+  font-style: italic;
+  font-weight: 600;
+
+  background: var(--gradient_orange);
+  background-size: 200%;
+  transition: all 1s;
+}
+.contactBottom button:hover {
+  background-position: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.popup {
+  width: 600px;
+  border-radius: 24px;
+  background: #2dd36f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  translate: -50%;
+}
+.popupText {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+/* 
+.popup-enter {
+  bottom: -42px;
+}
+.popup-enter-active {
+  bottom: 24px;
+  transition: all 500ms ease-in;
+}
+.popup-leave {
+  bottom: 24px;
+}
+.popup-leave-active {
+  bottom: -42px;
+  transition: all 300ms ease-in;
+} */

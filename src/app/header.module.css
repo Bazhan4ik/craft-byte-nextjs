@@ -1,0 +1,39 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+
+  border-bottom: 1px solid rgb(27, 27, 27);
+}
+
+.headerContent {
+  max-width: var(--max-width);
+  width: 100%;
+}
+
+.title {
+  margin: 8px 0;
+  color: black;
+}
+.title a {
+  text-decoration: none;
+}
+
+.title_Craft {
+  font-size: 38px;
+  color: rgb(238, 238, 238);
+  font-family: var(--font_title);
+}
+.title_Byte {
+  background: rgb(255, 167, 0);
+  background: linear-gradient(360deg, rgba(255,167,0,1) 0%, rgba(246,208,0,1) 100%);
+  background-clip: text;
+  color: transparent;
+  font-family: var(--font_title);
+  font-size: 38px;
+}
+
+.subtitle {
+  margin: 0;
+}
