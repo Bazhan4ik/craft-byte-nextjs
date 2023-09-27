@@ -3,17 +3,10 @@
 import Link from 'next/link';
 import './globals.css'
 import styles from "./header.module.css";
-import type { Metadata } from 'next'
 import { Nunito, Noto_Sans } from 'next/font/google'
 
 export const nunito = Nunito({ subsets: ['latin'], variable: "--font_default", style: ["normal", "italic"] });
 export const natoSans = Noto_Sans({ subsets: ['latin'], variable: "--font_title", weight: ["800"] });
-
-
-export const metadata: Metadata = {
-  title: 'CraftByte',
-  description: 'Crafting the future',
-}
 
 export default function RootLayout({
   children,
