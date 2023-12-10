@@ -1,0 +1,46 @@
+#pricing {
+  padding-bottom: 160px;
+}
+
+
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  padding-top: 160px;
+}
+
+.title {
+  font-family: var(--font_title);
+  background: linear-gradient(360deg, rgba(255, 167, 0, 1) 0%, rgba(246, 208, 0, 1) 100%);
+  background-clip: text;
+  font-size: 40px;
+  color: transparent;
+  margin-bottom: 0;
+}
+
+
+.card {
+  display: flex;
+  justify-content: space-between;
+
+
+  .cardText {
+    padding-top: 12px;
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+
+  .cardImage {
+    max-width: 324px;
+    max-height: 324px;
+
+    img {
+      width: 324px;
+      height: 324px;
+    }
+  }
+}

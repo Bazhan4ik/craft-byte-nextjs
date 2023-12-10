@@ -1,8 +1,8 @@
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import IntroSection from "./components/intro/intro";
-import CapabilitiesSection from "./components/capabilities/capabilities";
 import Pricing from "./components/pricing/pricing";
 import Contact from "../components/contact/contact";
+import Text from "./components/text_block/text_block";
 import { Metadata } from "next";
 
 
@@ -16,6 +16,8 @@ const WebsitePage = () => {
       <div className={styles.content}>
 
         <IntroSection></IntroSection>
+
+        <Text></Text>
 
         <Pricing></Pricing>
 

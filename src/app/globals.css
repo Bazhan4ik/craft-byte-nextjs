@@ -2,15 +2,16 @@
 
 :root {
 
-  --background-color: #0e1111;
+  --purple: #5D3891;
+  --purple-tint20: #4a2d74;
+  --orange: #F99417;
+  --gray: #E8E2E2;
 
-  --color_on-black: rgb(180, 180, 180);
-  --max-width: 1000px;
+  --base-color: #09192E;
+  --gray-color: #525252;
 
-
-  --gradient_orange: linear-gradient(45deg, rgba(255,167,0,1) 0%, rgba(246,208,0,1) 50%, rgba(255,167,0,1) 100%);
-  --gradient_purple: linear-gradient(45deg, rgba(192,63,255,1) 0%, rgba(206,105,255,1) 50%, rgba(192,63,255,1) 100%);
-  --gradient_green: linear-gradient(135deg, rgba(92,207,0,1) 0%, rgba(116,255,106,1) 50%, rgba(92,207,0,1) 100%);
+  --content-width: 1024px;
+  --content-margin: calc((100vw - var(--content-width)) / 2);
 }
 
 
@@ -18,14 +19,29 @@
 
 
 body {
-  padding: 0;
   margin: 0;
-  background-color: var(--background-color);
-  color: var(--color_on-black);
+  background-color: var(--gray);
+  color: var(--base-color);
   font-family: 'Nunito', sans-serif;
+  width: var(--content-width);
+  padding: 0 var(--content-margin);
 }
 
-::selection {
-  background: rgba(255,167,0,1);
-  color: rgb(97, 0, 146);
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--content-width);
+  margin: 0 var(--content-margin);
+  height: 100%;
+  z-index: -1;
+}
+.grid .block {
+  height: 100%;
+  border-left: 1px dashed  rgb(212, 212, 212);
+}
+.grid .block:last-of-type {
+  border-right: 1px dashed  rgb(212, 212, 212);
 }

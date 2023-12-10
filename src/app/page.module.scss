@@ -1,0 +1,35 @@
+#intro {
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-top: 124px;
+  width: 100%;
+
+  .intro_text {
+    padding: 12px 18px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .intro_slogan {
+      font-size: 2.2rem;
+      margin: 0;
+
+      .intro_slogan__your {
+        color: var(--orange);
+      }
+
+      .intro_slogan__us {
+        color: var(--purple);
+      }
+    }
+
+    .intro_subtitle {
+      .intro_subtitle_text {
+        margin-top: 24px;
+        color: var(--gray-color);
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
