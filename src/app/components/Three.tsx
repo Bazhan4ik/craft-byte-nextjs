@@ -7,59 +7,65 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 const ThreeScene: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
-
-      const geometry = new THREE.BoxGeometry();
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 1000);
       const renderer = new THREE.WebGLRenderer();
-      const ambientLight = new THREE.AmbientLight(0xffffff, 3);
+      const direct1 = new THREE.DirectionalLight(0xffffff, 3);
+      direct1.position.set(0, 0, 10)
+      scene.add(direct1)
+      const direct2 = new THREE.DirectionalLight(0xffffff, 1);
+      direct2.position.set(5, 0, 5)
+      scene.add(direct2)
+      const direct3 = new THREE.DirectionalLight(0xffffff, 1);
+      direct3.position.set(0, 5, 5)
+      scene.add(direct3)
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 5);
       scene.add(ambientLight);
-      renderer.setSize(400, 400);
-      renderer.setClearColor(0xe232222, 0);
+      renderer.setSize(1000, 1000);
+      renderer.setClearColor(0xFFFFFF, 0);
+      renderer.domElement.style.width = "400px";
+      renderer.domElement.style.height = "400px";
       containerRef.current?.appendChild(renderer.domElement);
-      camera.position.z = 5;
-
-
-      // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-      // const cube = new THREE.Mesh(geometry, material);
-      // scene.add(cube);
+      // camera.position.z = 5;
+      camera.position.set(0, 0, 5);
+      camera.rotateZ(1.5708);
 
       (async () => {
         const loader = new GLTFLoader();
-        const eye = await loader.loadAsync("./almost_eye.gltf");
+        const eye = await loader.loadAsync("./eye-simpler.gltf");
 
-        // eye.scene.scale.multiplyScalar(1.5);
         eye.scene.rotation.x = 1.5708;
-        eye.scene.rotation.y = 1.5708;
+        // eye.scene.rotation.y = 1.5708;
+        // eye.scene.rotation.z = 1.5708;
+        // eye.scene.rotation.z = -1.5708 / 8;
 
         scene.add(eye.scene);
 
         renderer.render(scene, camera);
 
-        const clock = new THREE.Clock();
+        window.addEventListener('mousemove', (ev: MouseEvent) => {
 
-        const animateGeometry = () => {
-          const elapsedTime = clock.getElapsedTime();
+          const x = ev.clientX;
+          const y = ev.clientY;
 
-          // eye.scene.rotation.y = elapsedTime;
-          eye.scene.rotation.x = elapsedTime;
-          // eye.scene.rotation.z = elapsedTime;
+          // eye.scene.rotation.z = x
+          // eye.scene.rotation.x = y
+
+          // eye.scene.rotation.z = 1.5708
+          // eye.scene.rotation.z = 1.5708 * 1.5
+
+          eye.scene.rotation.x = 1.5708 * (1 + (window.innerWidth - x) / window.innerWidth / 2.5) // moving left/right
+          eye.scene.rotation.z = 1.5708 * -(0 + y / window.innerHeight / 2)
+
 
           renderer.render(scene, camera);
-
-          window.requestAnimationFrame(animateGeometry);
-        }
-
-        animateGeometry();
+        });
       })();
-
-      renderer.render(scene, camera);
-
-
-
     }
   }, []);
 

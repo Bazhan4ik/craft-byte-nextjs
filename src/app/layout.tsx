@@ -75,7 +75,7 @@ export default function RootLayout({
 
             <div className={styles.header_links}>
               <a>Solutions</a>
-              <a>Technologies</a>
+              <a>Sumelse</a>
               <a className={styles.header_links__contact}>
                 Contact
                 <Image src={"./chevron-forward-outline.svg"} width={30} height={30} alt="icon"></Image>
