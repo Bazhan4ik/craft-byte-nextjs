@@ -23,6 +23,9 @@ const ThreeScene: React.FC = () => {
       const direct3 = new THREE.DirectionalLight(0xffffff, 1);
       direct3.position.set(0, 5, 5)
       scene.add(direct3)
+      const direct4 = new THREE.DirectionalLight(0xffffff, 1);
+      direct4.position.set(0, 5, 5)
+      scene.add(direct4)
 
       const ambientLight = new THREE.AmbientLight(0xffffff, 5);
       scene.add(ambientLight);
@@ -59,8 +62,14 @@ const ThreeScene: React.FC = () => {
           // eye.scene.rotation.z = 1.5708
           // eye.scene.rotation.z = 1.5708 * 1.5
 
-          eye.scene.rotation.x = 1.5708 * (1 + (window.innerWidth - x) / window.innerWidth / 2.5) // moving left/right
-          eye.scene.rotation.z = 1.5708 * -(0 + y / window.innerHeight / 2)
+          const fromLeftToCanvas = renderer.domElement.offsetLeft;
+          const fromTopToCanvas = renderer.domElement.offsetTop;
+          const canvasCenterHorizontal = fromLeftToCanvas + renderer.domElement.width / 2;
+          const canvasCenterVertical = fromTopToCanvas + renderer.domElement.height / 2;
+
+
+          eye.scene.rotation.x = 1.5708 * (1 + (canvasCenterHorizontal - x) / canvasCenterHorizontal / 2.5) // moving left/right
+          eye.scene.rotation.z = 1.5708 * -(0 + (y / canvasCenterVertical) / 2.5)
 
 
           renderer.render(scene, camera);
