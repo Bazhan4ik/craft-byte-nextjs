@@ -29,11 +29,21 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.intro_buttons}>
-            <a href="">
-              Projects
+            <a href="" className={`${styles.intro_button} ${styles.orange}`}>
+              <div className={styles.intro_button_title}>
+                Projects
+              </div>
+              <p className={styles.intro_button_subtitle}>
+                See my previous work.
+              </p>
             </a>
-            <a href="">
-              Contact
+            <a href="" className={styles.intro_button}>
+              <div className={styles.intro_button_title}>
+                Contact
+              </div>
+              <p className={styles.intro_button_subtitle}>
+                Send me an email.
+              </p>
             </a>
           </div>
         </div>

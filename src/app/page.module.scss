@@ -6,7 +6,10 @@
   width: 100%;
 
   .intro_left {
+    display: flex;
+    flex-direction: column;
     padding: 12px 18px;
+    gap: 24px;
     height: 100%;
   }
 
@@ -34,6 +37,29 @@
         font-size: 1.3rem;
       }
     }
+  }
+
+  .intro_buttons {
+    display: flex;
+    gap: 12px;
+
+    .intro_button {
+      text-decoration: none;
+      border: 3px var(--purple) solid;
+      border-radius: 8px;
+      padding: 6px;
+
+      div {
+        color: var(--base-color);
+      }
+
+      p {
+        color: var(--gray-color);
+      }
+    }
+
+
+
   }
 
   .eye {
