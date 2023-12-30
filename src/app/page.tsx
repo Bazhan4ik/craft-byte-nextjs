@@ -30,20 +30,24 @@ export default function Home() {
           </div>
           <div className={styles.intro_buttons}>
             <a href="" className={`${styles.intro_button} ${styles.orange}`}>
-              <div className={styles.intro_button_title}>
-                Projects
+              <div className={styles.intro_button_content}>
+                <div className={styles.intro_button_title}>
+                  Projects
+                </div>
+                <p className={styles.intro_button_subtitle}>
+                  See my previous work.
+                </p>
               </div>
-              <p className={styles.intro_button_subtitle}>
-                See my previous work.
-              </p>
             </a>
             <a href="" className={styles.intro_button}>
-              <div className={styles.intro_button_title}>
-                Contact
+              <div className={styles.intro_button_content}>
+                <div className={styles.intro_button_title}>
+                  Contact
+                </div>
+                <p className={styles.intro_button_subtitle}>
+                  Send me an email.
+                </p>
               </div>
-              <p className={styles.intro_button_subtitle}>
-                Send me an email.
-              </p>
             </a>
           </div>
         </div>

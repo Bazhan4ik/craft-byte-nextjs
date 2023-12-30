@@ -10,6 +10,9 @@
   --base-color: #09192E;
   --gray-color: #525252;
 
+  /* --gray-btn-background: #E8E2E220; */
+  --gray-btn-background: #FFFFFF20;
+
   --content-width: 1024px;
   --content-margin: calc((100vw - var(--content-width)) / 2);
 }
